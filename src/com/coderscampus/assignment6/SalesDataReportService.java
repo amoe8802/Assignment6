@@ -12,25 +12,25 @@ public class SalesDataReportService {
         System.out.println("Yearly Sales Report: ");
         yearlySales.forEach((year, sales) -> System.out.println(year + "->" + sales));
 
-        highAndLowMonths(salesData);
+        bestAndWorstMonths(salesData);
     }
 
 
-    public void highAndLowMonths(List<TeslaSalesData> salesData) {
+    public void bestAndWorstMonths(List<TeslaSalesData> salesData) {
 
-        TeslaSalesData highMonth = salesData.stream()
+        TeslaSalesData bestMonth = salesData.stream()
                 .max(Comparator.comparingInt(TeslaSalesData::getSales)).orElse(null);
 
-        TeslaSalesData lowMonth = salesData.stream()
+        TeslaSalesData worstMonth = salesData.stream()
                 .min(Comparator.comparingInt(TeslaSalesData::getSales)).orElse(null);
 
 
-        if (highMonth != null) {
-            System.out.println("The highest month " + highMonth.getDate());
+        if (bestMonth != null) {
+            System.out.println("The best month was" + bestMonth.getDate());
 
         }
-        if (lowMonth != null) {
-            System.out.println("The lowest month was " + lowMonth.getDate());
+        if (worstMonth != null) {
+            System.out.println("The worst month was" + worstMonth.getDate());
         }
     }
 

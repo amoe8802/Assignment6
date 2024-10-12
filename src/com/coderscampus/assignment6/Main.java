@@ -15,11 +15,14 @@ public class Main {
        
         System.out.println("Model 3 Sales Report: ");
         analyzer.analyzeSales(model3Sales);
+        System.out.println("-------------------");
 
         System.out.println("\n Model S Sales Report: ");
         analyzer.analyzeSales(modelSSales);
+        System.out.println("-------------------");
 
         System.out.println("\n Model X Sales Report: ");
         analyzer.analyzeSales(modelXSales);
+        System.out.println("-------------------");
         }
 }

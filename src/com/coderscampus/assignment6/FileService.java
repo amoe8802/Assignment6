@@ -4,11 +4,12 @@ import java.io.*;
 import java.util.*;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 public class FileService {
     public List<TeslaSalesData> data (String fileName) throws IOException {
         List<TeslaSalesData> salesData = new ArrayList<>();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM-yy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM-yy", Locale.US);
 
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))){
             String line = br.readLine();
